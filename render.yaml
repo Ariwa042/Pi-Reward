@@ -1,0 +1,14 @@
+# render.yaml
+
+services:
+  - type: web
+    name: django-app
+    env: python
+    plan: free
+    buildCommand: ""  # No build command is needed since Docker will handle the build.
+    startCommand: python manage.py runserver 0.0.0.0:8000
+    dockerfilePath: Dockerfile
+    autoDeploy: true
+    healthCheckPath: /
+    regions: oregon
+    port: 8000
