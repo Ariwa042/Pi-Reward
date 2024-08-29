@@ -1,4 +1,4 @@
 django
 requests
 whitenoise[brotli]
-gunicorn uvicorn
+gunicorn
