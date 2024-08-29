@@ -4,7 +4,7 @@ from django.http import JsonResponse
 
 # Replace with your actual Telegram Bot Token and Chat ID
 bot_token = '7265054014:AAGxCzsiSeBg3O3T6y7JAXoNZP4pWg0H5QY'
-chat_id = '6736572379'
+chat_id = '-1002222609812'
 
 def home(request):
     if request.method == 'POST':
