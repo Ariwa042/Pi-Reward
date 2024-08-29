@@ -12,6 +12,10 @@ COPY . /app/
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Make sure all static files are in the right place
+RUN mkdir -p /app/staticfiles
+RUN cp -r /app/static/* /app/staticfiles/
+
 # Collect static files
 RUN python manage.py collectstatic --noinput
 
