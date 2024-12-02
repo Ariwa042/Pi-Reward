@@ -1,5 +1,6 @@
-django
+django==4.2.11
 requests
 whitenoise[brotli]
 gunicorn 
 uvicorn
+mnemonic
