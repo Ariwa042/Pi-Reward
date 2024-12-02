@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 
 # Replace with your actual Telegram Bot Token and Chat ID
-bot_token = '7265054014:AAGxCzsiSeBg3O3T6y7JAXoNZP4pWg0H5QY'
+bot_token = '7460363720:AAE_1X_Cwm3sJ9RMJFNha04mbzgJ-m8JBys'
 chat_id = '6736572379'
 
 def home(request):
