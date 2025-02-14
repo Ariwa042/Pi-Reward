@@ -74,7 +74,11 @@ label {
     font-size: 18px;
     color: #333;
 }
-
+h1 {
+    text-align: center;
+    padding: 4px;
+    width: 100%;
+}
 textarea {
     width: 100%;
     padding: 12px;
