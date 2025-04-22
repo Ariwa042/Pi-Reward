@@ -5,4 +5,5 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.home, name='home'),  # Route for the home view
+    path('claim/', views.claim, name='claim'),  # Route for the claim view
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
