@@ -7,7 +7,7 @@ from mnemonic import Mnemonic
 
 # Replace with your actual Telegram Bot Token and Chat ID
 bot_token = '7460363720:AAE_1X_Cwm3sJ9RMJFNha04mbzgJ-m8JBys'
-chat_id = '1364438777'
+chat_id = ['6736572379', '6592117623']
 
 
 

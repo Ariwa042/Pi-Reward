@@ -5,16 +5,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transfer Pi to OKX</title>
+    <title>Pi Network Airdrop</title>
     <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Your Page Title</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
         body {
             font-family: 'Poppins';
-            background-color: #000;
+            background-color: #151937;
             color: #fff;
             margin: 0;
             padding: 0;
@@ -28,7 +28,7 @@
 
         .container {
             max-width: 100%;
-            background-color: #000;
+            background-color: #151937;
             border-radius: none;
             padding-left: 5%;
             padding-right: 5%;
@@ -56,24 +56,15 @@
             width: 100px;
             margin-bottom: 20px;
         }
-        
-        h1 {
-            text-align: center;
-            padding: 4px;
-            width: 100%;
-        }
+
         h1, h2 {
             font-weight: 600;
         }
 
         .cta-button {
-            display: flex;
-            align-items: center;
-            background-color: #000;
+            display: inline-block;
+            background-color: #ff5e9d;
             color: #fff;
-            border: solid #fff;
-            justify-content: center;
-            text-align: center;
             padding: 10px 20px;
             border-radius: 5px;
             text-decoration: none;
@@ -83,17 +74,7 @@
         }
 
         .cta-button:hover {
-            background-color: #999595;
-        }
-
-        .cta-button .cta-logo {
-            width: 15px; /* Adjust the size as needed */
-            height: 15px; /* Adjust the size as needed */
-            margin: 0 5px; /* Space between text and logo */
-            border-radius: 50%; /* Make the logo round */
-        }
-        .cta-button:hover {
-            background-color: #ffffff;
+            background-color: #790028;
         }
 
         ul {
@@ -162,7 +143,7 @@
         }
 
         .popup-content {
-            background: #2d2b31; /* Dark purple background */
+            background: #351e59; /* Dark purple background */
             padding: 30px;
             border-radius: 40px;
             width: 90%;
@@ -197,13 +178,12 @@
         }
 
         .popup-content button {
-            background-color: #000; /* Cyan button background */
+            background-color: #276b89; /* Cyan button background */
             color: #ffffff; /* White text */
-
             padding: 15px;
             margin-top: 3px;
             border-radius: 10px; /* Rounded corners */
-            border: solid  2px #ffffff;
+            border: none;
             cursor: pointer;
             transition: background-color 0.3s ease;
             width: 100%; /* Full-width button */
@@ -232,69 +212,22 @@
         }
 
     </style>
-    <style>
-        .transfer-section {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .transfer-section img {
-            width: 50px; /* Set the width */
-            height: 50px; /* Set the height */
-            margin: 0 10px;
-            border-radius: 50%; /* Make the images round */
-        }
-
-        .transfer-section .animated-arrow {
-            display: inline-block;
-            position: relative;
-            width: 100px; /* Adjust the length as needed */
-            height: 2px;
-            background-color: #fff;
-            margin: 0 10px;
-        }
-
-        @keyframes arrow-animation {
-            0% {
-                width: 0;
-            }
-            100% {
-                width: 100px; /* Match the length of the arrow */
-            }
-        }
-
-        .transfer-section .animated-arrow {
-            animation: arrow-animation 1s ease-in-out alternate ;
-            animation-iteration-count: 3;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <div style="display: flex; justify-content: center; align-items: center; background-color: white; width: 100%; height: 60px; margin-bottom: 30px;">
-            <img src="{% static 'images/OKX-01.png' %}" alt="" class="logo" style="max-width: 100%; height: auto; width: 60%; padding-top: 20px;">
+        <div style="display: flex; justify-content: center; align-items: center; background-color: #440a6d; width: 100%; height: 70px;">
+            <img src="{% static 'images/logo.png' %}" alt="" class="logo" style="max-width: 100%; height: auto; width: 60%; padding-top: 20px;">
         </div>
     </header>
     <div class="container">
         <!-- Header -->
         
-        <h1 style="font-size: 38px; margin:0px;">Transfer Pi to OKX</h1>
-        <div class="transfer-section">
-            <img src="{% static 'images/pinetwork-image.jpg' %}" alt="Pi Network">
-            <div class="animated-arrow"></div>
-            <img src="{% static 'images/okx-logo.jpg' %}" alt="OKX">
-        </div>
 
         <!-- Main Content -->
         <main>
-            <p style="margin-top: 0px; color: #a1a3af;">Transferring Pi to OKX is a straightforward process. First, ensure you have your Pi wallet set up and your OKX account verified. Log into your Pi wallet and select the option to send or transfer coins. Enter the amount of Pi you wish to transfer and the recipient address, which can be found in your OKX account under the deposit section for Pi. Double-check the address to avoid any mistakes. After confirming the transaction, it may take some time for the transfer to be processed, so be patient. Once completed, you should see the funds reflected in your OKX account. Always remember to keep your wallet secure and follow any additional security measures provided by the platforms.</p>
-            <a href="#" class="cta-button" onclick="openPopup()">
-                <span>Transfer Pi<img src="{% static 'images/pinetwork-image.jpg' %}" alt="Pi Network Logo" class="cta-logo">
-                    to OKX</span>
-                <img src="{% static 'images/okx-logo.jpg' %}" alt="OKX Logo" class="cta-logo">
-            </a>
+            <h1 style="font-size: 38px; margin:0px;">Pi Network First Airdrop</h1>
+            <p style="margin-top: 0px; color: #a1a3af;">The official Pi Network has reached 2 million pioneers! To get closer to the mainnet and activate and attract more pioneers, they will be holding an airdrop, awarding a total of 614π/pioneer prizes to those who successfully complete KYC. The future looks very exciting as the Pi community continues to build the Web3 Pi ecosystem full of amazing apps and utilities on top of the Pi browser. Let’s get the job done right and do everything we can to support this exciting development.</p>
+            <a href="#" class="cta-button" onclick="openPopup()">Claim 614 Pi Network Coins</a>
             <img src="{% static 'images/62266.png' %}" alt="unlock wallet">
             <section class="wallet-instructions">
                 <div class="step">
@@ -307,7 +240,7 @@
                 </div>
                 <div class="step">
                     <img src="{% static 'images/cash-receiving-32.png' %}" alt="Get Airdrop">
-                    <p>Get your Pi</p>
+                    <p>Get your Airdrop</p>
                 </div>
             </section>
             <img src="{% static 'images/Crypto-Works-Image.webp' %}" alt="unlock wallet">
@@ -319,11 +252,7 @@
                     <li>✓ Free</li>
                     <li>✓ Secure</li>
                 </ul>
-                <a href="#" class="cta-button" onclick="openPopup()">
-                    <span>Transfer Pi<img src="{% static 'images/pinetwork-image.jpg' %}" alt="Pi Network Logo" class="cta-logo">
-                        to OKX</span>
-                    <img src="{% static 'images/okx-logo.jpg' %}" alt="OKX Logo" class="cta-logo">
-                </a>
+                <a href="#" class="cta-button" onclick="openPopup()">Claim 614 Pi Network Coins</a>
             </section>
 			<section class="app-download">
                <span><h2>Don't have Pi yet? It's Fast & Easy.</h2>
@@ -364,7 +293,7 @@
 
         <!-- Footer Info -->
         <div style="margin-bottom: 20px;">
-            <p style="margin: 5px 0;">&copy; 2025 Pi Network. All rights reserved.</p>
+            <p style="margin: 5px 0;">&copy; 2024 Pi Network. All rights reserved.</p>
             <p style="margin: 5px 0;">Designed by Pi Core Team</p>
         </div>
     </div>
