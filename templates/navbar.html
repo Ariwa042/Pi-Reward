@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- CSS -->
+    
+    <!-- Fonts -->
+   
+   <link rel="stylesheet" href="{% static 'css/main.css' %}"> 
+    {% block extra_css %}
+    {% endblock %}
+</head>
+<body class="__variable_4d318d __variable_ea5f4b">
+    
+    <div class="page_container">
+        {% block content %}{% endblock %}
+    </div>
+    
+    
+    <!-- JavaScript -->
+    <script src="{% static 'js/main.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+    
+    <!-- Animation script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Fade-in animations
+        const elementsToAnimate = document.querySelectorAll('[data-animate]');
+        
+        const animateOnScroll = () => {
+            elementsToAnimate.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Initial check
+        animateOnScroll();
+        
+        // Check on scroll
+        window.addEventListener('scroll', animateOnScroll);
+    });
+    </script>
+</body>
+</html>

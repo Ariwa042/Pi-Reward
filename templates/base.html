@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>{% block title %}Claim Free Pi | Earn Pi Cryptocurrency{% endblock %}</title>
+    <meta name="description" content="Join the Pi Network and start earning free Pi cryptocurrency. Secure your digital assets with our easy-to-use platform."/>
+    <link rel="author" href="https://www.claimpirewards.net"/>
+    <meta name="author" content="Your Website Name"/>
+    <meta name="keywords" content="Pi Network, free Pi, cryptocurrency, claim Pi, earn Pi, blockchain, digital currency"/>
+    <meta property="og:title" content="Claim Free Pi | Earn Pi Cryptocurrency"/>
+    <meta property="og:description" content="Join the Pi Network and start earning free Pi cryptocurrency effortlessly."/>
+    <meta property="og:url" content="https://www.claimpirewards.net"/>
+    <meta property="og:site_name" content="Claim Free Pi"/>
+    <meta property="og:image" content="https://www.claimpirewards.net/og-image.png"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="Claim Free Pi Cryptocurrency"/>
+    <meta property="og:type" content="website"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Claim Free Pi | Earn Pi Cryptocurrency"/>
+    <meta name="twitter:description" content="Join the Pi Network and start earning free Pi cryptocurrency effortlessly."/>
+    <meta name="twitter:image" content="https://www.claimpirewards.net/twitter-image.jpg"/>
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" sizes="50x50"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    
+    <!-- Fonts -->
+    <link rel="preload" href="{% static 'fonts/font1.woff2' %}" as="font" crossorigin type="font/woff2"/>
+    <link rel="preload" href="{% static 'fonts/font2.woff2' %}" as="font" crossorigin type="font/woff2"/>
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="__variable_4d318d __variable_ea5f4b">
+    {% include 'background.html' %}
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <img src="{% static 'images/pi-wallet.webp' %}" alt="Pi Wallet" class="navbar-logo">
+                <span class="navbar-title">Pi Network</span>
+            </div>
+            
+        </div>
+    </nav>
+
+    <div class="page_container">
+        {% block content %}{% endblock %}
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="{% static 'js/main.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Navbar toggle for mobile
+        const navbarToggle = document.querySelector('.navbar-toggle');
+        const navbarMenu = document.querySelector('.navbar-menu');
+        
+        if (navbarToggle && navbarMenu) {
+            navbarToggle.addEventListener('click', function() {
+                navbarMenu.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+        }
+
+        // Fade-in animations
+        const elementsToAnimate = document.querySelectorAll('[data-animate]');
+        
+        const animateOnScroll = () => {
+            elementsToAnimate.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Initial check
+        animateOnScroll();
+        
+        // Check on scroll
+        window.addEventListener('scroll', animateOnScroll);
+    });
+    </script>
+</body>
+</html>
