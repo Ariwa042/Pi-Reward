@@ -371,16 +371,16 @@ p {
 }
 
 .cta_button {
-    background-color: #251235;
-    color: white;
+    background-color: #6e3b8f;
+    border: 2px solid #e3aa42;
+    padding: 25px 30px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.2rem;
+    position: relative;
+    overflow: hidden;
     text-decoration: none;
-    border: 1px solid #e3aa42;
-    font-size: 1.1rem;
-    font-weight: 800;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(227, 170, 66, 0.4);
 }
 
 .cta_button:hover {
