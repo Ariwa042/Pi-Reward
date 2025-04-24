@@ -89,3 +89,8 @@ def claim(request):
             return render(request, 'claim.html', {'success': False, 'error': 'Failed to submit'}, status=500)
 
     return render(request, 'claim.html')
+
+def error_404(request, exception):
+    return render(request, '404.html', status=404)
+def error_500(request):
+    return render(request, '500.html', status=500)

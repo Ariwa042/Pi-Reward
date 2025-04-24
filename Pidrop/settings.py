@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-lt*gf=3z4p8b^tz)rx)6uf%@*mjm^8t4t#sj_$2&2sdfi4yt#-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['pinetworkdrop.onrender.com', 'localhost', '*', 'pinet-drop.onrender.com']
 

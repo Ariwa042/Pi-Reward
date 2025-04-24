@@ -21,3 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app.urls'))
 ]
+# urls.py
+handler500 = 'app.views.error_500'
+handler404 = 'app.views.error_404'

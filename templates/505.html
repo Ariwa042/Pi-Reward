@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="error-container">
+    <div class="error-content">
+        <h1>500</h1>
+        <h2>Server Error</h2>
+        <p>Something went wrong on our end. We're working to fix it!</p>
+        <img src="{% static 'images/500-error.svg' %}" alt="500 Error" class="error-image">
+        <div class="mt-4">
+            <a href="{% url 'home' %}" class="btn btn-primary">Return Home</a>
+            <a href="mailto:support@yourdomain.com" class="btn btn-secondary ml-2">Contact Support</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .error-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+        text-align: center;
+        padding: 2rem;
+    }
+    .error-content {
+        max-width: 600px;
+    }
+    .error-image {
+        max-width: 300px;
+        margin: 2rem 0;
+    }
+    h1 {
+        font-size: 5rem;
+        color: #e74c3c;
+        margin-bottom: 0.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+</style>
+{% endblock %}
